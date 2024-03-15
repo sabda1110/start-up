@@ -10,10 +10,10 @@ const Hero = () => {
           We Deliver
         </h1>
         <div className="desc__play items-center  gap-5 w-[60%] grid grid-cols-3 ">
-          <section className="w-[50px] h-[50px] ml-10 lg:ml-20 bg-[#9FD685] rounded-full shadow-lg shadow-green-100 flex items-center justify-center">
+          <section className="w-[50px] h-[50px] sm:ml-5 lg:ml-20 bg-[#9FD685] rounded-full shadow-lg shadow-green-100 flex items-center justify-center">
             <FaPlay size={25} className="text-white ml-1" />
           </section>
-          <p className=" col-span-2 text-[1rem] text-[#414141] text-start">
+          <p className=" col-span-2 text-[12px] lg:text-[1rem]  text-[#414141] text-start">
             Whatsab berspesialisasi dalam pengembangan seluler berperforma
             tinggi dan aplikasi web.
           </p>

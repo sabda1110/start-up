@@ -1,0 +1,8 @@
+.scroll {
+  scroll-behavior: smooth;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 0em;
+  background-color: transparent;
+}
