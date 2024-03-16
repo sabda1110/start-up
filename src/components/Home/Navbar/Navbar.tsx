@@ -17,7 +17,8 @@ const navItem = [
 ];
 
 const Navbar = () => {
-  const [menu, setMenu] = useState(false);
+  const [menu, setMenu] = useState<boolean>(false);
+  const [active, setActive] = useState<string>('');
 
   return (
     <div className="container w-screen h-[100px] flex justify-between items-center  mx-auto box-border">
@@ -31,8 +32,12 @@ const Navbar = () => {
       </div>
       <div className={Style.container__item}>
         {navItem.map((item) => (
-          <Link key={item.name} href={item.link}>
-            <p className={Style.item}>{item.name}</p>
+          <Link key={item.name} href={item.link} onClick={() => setActive(item.name)}>
+            <p
+              className={`${Style.item} ${active === item.name ? 'border-b-2 border-black' : ''} `}
+            >
+              {item.name}
+            </p>
           </Link>
         ))}
         <FiSearch size={20} className=" ml-9" />
