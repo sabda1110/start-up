@@ -31,6 +31,7 @@ const Customer = () => {
               <Image
                 key={item.id}
                 src={item.url}
+                alt="Logo Icon"
                 width={150}
                 height={150}
                 objectFit="contain"
