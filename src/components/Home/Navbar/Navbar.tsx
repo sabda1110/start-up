@@ -14,11 +14,10 @@ const Navbar = () => {
     <div className=" container shadow-md  w-screen h-[100px] flex justify-between items-center  mx-auto box-border">
       <div className={Style.container__img}>
         <Image
-          src={'/Images/LogoSabda.png'}
+          src={'/Images/logo.png'}
           alt="logo Whatsabb"
           fill
-          objectFit="cover"
-          objectPosition="center"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
         />
       </div>
       <div className={Style.container__item}>

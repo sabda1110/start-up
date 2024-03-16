@@ -6,8 +6,7 @@ const Contact = () => {
         <Image
           src={'/Images/contact.png'}
           fill
-          objectFit="cover"
-          objectPosition="center"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
           alt="Gambar Contact"
         />
 
