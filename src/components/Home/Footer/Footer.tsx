@@ -63,9 +63,7 @@ const Footer = () => {
         </div>
       </section>
       <section className="w-screen mt-5  p-4 shadow-[0_35px_60px_-15px_rgba(0,0,0)]">
-        <h2 className=" font-semibold text-[18px]">
-          Whatsab.id | TumuTuku 2019
-        </h2>
+        <h2 className=" font-semibold text-[18px]">TumuTuku | Whatsab 2024</h2>
       </section>
     </div>
   );
