@@ -17,9 +17,7 @@ const Customer = () => {
   ];
   return (
     <div className=" mt-[26rem] lg:mt-36 w-screen flex flex-col items-center ">
-      <h2 className=" text-[25px] lg:text-[36px] font-semibold text-[#414141]">
-        Our Customers
-      </h2>
+      <h2 className=" text-[25px] lg:text-[36px] font-semibold text-[#414141]">Our Customers</h2>
       <h2 className=" text-[25px] lg:text-[36px] font-semibold text-[#414141]">
         are our biggest fans
       </h2>
@@ -34,7 +32,7 @@ const Customer = () => {
                 alt="Logo Icon"
                 width={150}
                 height={150}
-                objectFit="contain"
+                style={{ objectFit: 'contain' }}
               />
             );
           })}
