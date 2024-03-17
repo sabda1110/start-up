@@ -7,6 +7,7 @@ import { FiSearch } from 'react-icons/fi';
 import { TiThMenuOutline } from 'react-icons/ti';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+import useMediaQuery from '@/utils/hooks/useMediaQuery';
 
 const navItem = [
   { name: 'Home', link: '/' },
@@ -25,6 +26,13 @@ const Navbar = () => {
     setMenu(!menu);
     document.body.classList.toggle('overflow-hidden');
   };
+
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+  if (isDesktop && menu) {
+    document.body.classList.remove('overflow-hidden');
+  } else if (!isDesktop && menu) {
+    document.body.classList.add('overflow-hidden');
+  }
 
   return (
     <div className="container w-screen h-[100px] flex justify-between items-center  mx-auto box-border">
