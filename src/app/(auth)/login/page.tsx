@@ -5,11 +5,15 @@ import { useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 
-const loginPage = ({ searchParams }) => {
+const loginPage = ({ searchParams }: { searchParams: { callbackUrl: string } }) => {
   const callbackUrl = searchParams.callbackUrl || '/';
   const router = useRouter();
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+
+  const handleClick = (ref: React.RefObject<HTMLInputElement> | null) => {
+    ref?.current?.focus();
+  };
   return (
     <div className="w-screen h-screen flex items-center justify-center relative">
       <section className=" w-[350px] h-[95%] lg:w-[589px] lg:h-[680px] bg-[#f5f5f5] flex flex-col items-center  rounded-lg overflow-hidden border  border-[#d5d5d5]">
@@ -50,7 +54,7 @@ const loginPage = ({ searchParams }) => {
         <form className=" w-[300px] lg:w-[487px] mt-4">
           <div
             className="input__form w-full flex items-center gap-5 h-[48px] bg-white rounded-md shadow-sm cursor-pointer"
-            onClick={() => emailRef.current.focus()}
+            onClick={() => handleClick(emailRef)}
           >
             <MdOutlineMail className="text-[#000] text-[30px] ml-3" />
             <div className="flex flex-col w-full">
@@ -65,7 +69,7 @@ const loginPage = ({ searchParams }) => {
           </div>
           <div
             className="input__form mt-3 w-full flex items-center gap-5 h-[48px] bg-white rounded-md shadow-sm"
-            onClick={() => passwordRef.current.focus()}
+            onClick={() => handleClick(passwordRef)}
           >
             <MdKey className="text-[#000] text-[30px] ml-3" />
             <div className="flex flex-col w-full">
