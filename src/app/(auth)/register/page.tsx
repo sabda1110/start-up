@@ -4,7 +4,7 @@ import { MdOutlineMail, MdKey } from 'react-icons/md';
 import { useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
-const loginPage = () => {
+const registerPage = () => {
   const router = useRouter();
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -95,4 +95,4 @@ const loginPage = () => {
   );
 };
 
-export default loginPage;
+export default registerPage;
