@@ -3,8 +3,10 @@ import Image from 'next/image';
 import { MdOutlineMail, MdKey } from 'react-icons/md';
 import { useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 
-const loginPage = () => {
+const loginPage = ({ searchParams }) => {
+  const callbackUrl = searchParams.callbackUrl || '/';
   const router = useRouter();
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -25,7 +27,10 @@ const loginPage = () => {
 
         <h2 className=" w-[100%] px-4 text-[2rem] font-medium">Welcome to</h2>
         <h3 className=" w-[100%] px-4 text-[1.5rem] font-black text-[#6258dc]">TumuTuku</h3>
-        <div className=" w-[300px] lg:w-[487px] h-[48px] flex gap-3 items-center justify-center bg-white shadow-md rounded-md mt-5">
+        <div
+          className=" w-[300px] lg:w-[487px] h-[48px] flex gap-3 items-center justify-center bg-white shadow-md rounded-md mt-5 cursor-pointer "
+          onClick={() => signIn('google', { callbackUrl, redirect: false })}
+        >
           <Image src={'/Images/google.png'} alt="Icon Google" width={22} height={22} />
           <p>Login with Google</p>
         </div>
