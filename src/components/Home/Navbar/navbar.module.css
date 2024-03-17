@@ -39,5 +39,6 @@
     cursor: pointer;
     display: block;
     margin-right: 20px;
+    z-index: 20;
   }
 }
