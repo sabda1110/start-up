@@ -25,6 +25,15 @@
   display: none;
 }
 
+@media screen and (max-width: 1024px) {
+  .container__img {
+    margin-left: 20px;
+  }
+  .container__item {
+    margin-right: 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .container__img {
     width: 130px;
@@ -38,7 +47,7 @@
   .menu {
     cursor: pointer;
     display: block;
-    margin-right: 20px;
+    margin-right: 40px;
     z-index: 20;
   }
 }
