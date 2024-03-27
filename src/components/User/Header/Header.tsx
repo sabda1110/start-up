@@ -1,8 +1,27 @@
 import { FaHeadset } from 'react-icons/fa6';
 import { HiMenuAlt2 } from 'react-icons/hi';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState, useRef } from 'react';
 
 const Header = ({ open }: { open: Function }) => {
+  const [isShowUserMenu, setIsShowUserMenu] = useState<Boolean>(false);
+
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: any) => {
+      if (!menuRef?.current?.contains(e.target)) {
+        setIsShowUserMenu(false);
+      }
+    };
+
+    console.log('coba');
+    document.addEventListener('mousedown', handler);
+    return () => {
+      document.removeEventListener('mousedown', handler);
+    };
+  }, []);
   return (
     <div className=" p-4   py-6 w-full h-[92px] flex lg:justify-end md:justify-end justify-between items-center ">
       <HiMenuAlt2
@@ -10,7 +29,7 @@ const Header = ({ open }: { open: Function }) => {
         className=" lg:hidden md:hidden block text-[#637381] cursor-pointer"
         size={25}
       />
-      <section className=" flex  items-center gap-x-3 justify-center text-[#637381]">
+      <section className=" flex  items-center gap-x-3 justify-center text-[#637381]" ref={menuRef}>
         <FaHeadset size={25} />
         <p className="text-[0.8rem] lg:block md:block hidden ">Hubungin Tim Tumutuku</p>
         <Image
@@ -19,8 +38,26 @@ const Header = ({ open }: { open: Function }) => {
           width={45}
           height={45}
           style={{ objectFit: 'cover', objectPosition: 'center' }}
-          className="  rounded-full "
+          className="rounded-full hover:brightness-90 z-30"
+          onClick={() => setIsShowUserMenu(!isShowUserMenu)}
         />
+        <div
+          className={`absolute top-20 right-8 bg-white shadow-xl border rounded-md p-4 z-20 ${isShowUserMenu ? 'block' : 'hidden'}`}
+        >
+          <div className="pb-2">
+            <p className="text-lg text-gray-900 font-medium px-2 py-1">Zuma.id</p>
+            <p className="px-2 pb-1 text-gray-500">rasodof6lkasdf123@gmail.com</p>
+          </div>
+          <hr className="py-2" />
+          <div className="flex flex-col">
+            <Link href="#" className="text-gray-800 hover:bg-gray-100 px-2 py-4 rounded">
+              Akun perusahaan
+            </Link>
+            <Link href="#" className="text-gray-800 hover:bg-gray-100 px-2 py-4 rounded">
+              Keluar Akun
+            </Link>
+          </div>
+        </div>
       </section>
     </div>
   );
