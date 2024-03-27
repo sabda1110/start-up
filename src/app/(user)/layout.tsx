@@ -23,8 +23,8 @@ export default function DashboardUserLayout({ children }: { children: React.Reac
     <div className="w-screen h-screen flex  ">
       <Sidebar />
       <div className="w-full">
-        {open && <Menu open={open} setOpen={setOpen} />}
         <Header open={handleClick} />
+        <Menu open={open} setOpen={setOpen} />
         {children}
       </div>
     </div>
