@@ -20,9 +20,9 @@ export default function DashboardUserLayout({ children }: { children: React.Reac
     document.body.classList.add('overflow-hidden');
   }
   return (
-    <div className="w-screen h-screen flex  ">
+    <div className=" w-svw overflow-hidden border h-screen flex  ">
       <Sidebar />
-      <div className="w-full">
+      <div className=" w-full relative">
         <Header open={handleClick} />
         <Menu open={open} setOpen={setOpen} />
         {children}
