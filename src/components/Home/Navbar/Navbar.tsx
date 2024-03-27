@@ -3,7 +3,6 @@
 import Style from './navbar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FiSearch } from 'react-icons/fi';
 import { TiThMenuOutline } from 'react-icons/ti';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
@@ -45,14 +44,14 @@ const Navbar = () => {
         />
       </Link>
       <div className={Style.container__item}>
-        {navItem.map((item) => (
+        {navItem.map((item, index) => (
           <Link key={item.name} href={item.link}>
-            <p className={`${item.link === pathname ? 'border-b-2 border-black' : ''}`}>
+            <p className={`${index === 2 && 'text-center'}${item.link === pathname ? 'border-b-2 border-black' : ''}`}>
               {item.name}
             </p>
           </Link>
         ))}
-        <FiSearch size={20} className=" ml-9" />
+        <Link href={`/login`} className="bg-[#9FD685] font-medium px-4 py-2 text-[#123813] rounded-md">Login</Link>
       </div>
       <TiThMenuOutline size={25} className={Style.menu} onClick={handleClick} />
       <div
@@ -67,6 +66,7 @@ const Navbar = () => {
             </p>
           </Link>
         ))}
+        <Link href={`/login`} className="bg-[#9FD685] font-medium px-4 py-2 text-[#123813] rounded-md">Login</Link>
       </div>
     </div>
   );
