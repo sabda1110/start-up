@@ -74,7 +74,9 @@ const Sidebar = () => {
       onMouseLeave={onMouseLeave}
     >
       <section className=" w-full flex justify-between items-center">
-        <Image src={'/Images/logo.png'} alt="Logo" width={104} height={41} />
+        <Link href={'/'}>
+          <Image src={'/Images/logo.png'} alt="Logo" width={104} height={41} />
+        </Link>
         {miniSize || isOpen ? (
           <MdOutlineKeyboardDoubleArrowRight
             size={30}

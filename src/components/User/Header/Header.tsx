@@ -9,15 +9,19 @@ const Header = ({ open }: { open: Function }) => {
 
   const menuRef = useRef<HTMLDivElement>(null);
 
+  // console.log(menuRef.current.contains(menuRef.current));
+
   useEffect(() => {
     const handler = (e: any) => {
+      // Mengecek apakan di container section ada image di dalamnya
       if (!menuRef?.current?.contains(e.target)) {
         setIsShowUserMenu(false);
       }
     };
-
-    console.log('coba');
+    //Melakukan event mousedown = mengclick dimana saja
     document.addEventListener('mousedown', handler);
+
+    // Mengembalikan event mousedown
     return () => {
       document.removeEventListener('mousedown', handler);
     };
@@ -38,11 +42,15 @@ const Header = ({ open }: { open: Function }) => {
           width={45}
           height={45}
           style={{ objectFit: 'cover', objectPosition: 'center' }}
-          className="rounded-full hover:brightness-90 z-30"
+          className={` ${
+            isShowUserMenu ? 'brightness-60 ' : ''
+          }rounded-full hover:brightness-90 z-30 cursor-pointer`}
           onClick={() => setIsShowUserMenu(!isShowUserMenu)}
         />
         <div
-          className={`absolute top-20 right-8 bg-white shadow-xl border rounded-md p-4 z-20 ${isShowUserMenu ? 'block' : 'hidden'}`}
+          className={`absolute top-20 right-8 bg-white shadow-xl border rounded-md p-4 z-20 ${
+            isShowUserMenu ? 'block' : 'hidden'
+          }`}
         >
           <div className="pb-2">
             <p className="text-lg text-gray-900 font-medium px-2 py-1">Zuma.id</p>
