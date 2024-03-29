@@ -6,7 +6,13 @@ import Sidebar from '@/components/User/Sidebar/Sidebar';
 import { useState } from 'react';
 import useMediaQuery from '@/utils/hooks/useMediaQuery';
 
-export default function DashboardUserLayout({ children }: { children: React.ReactNode }) {
+export default function DashboardUserLayout({
+  children,
+  modal
+}: {
+  children: React.ReactNode;
+  modal: React.ReactNode;
+}) {
   const [open, setOpen] = useState<Boolean>(false);
   const handleClick = () => {
     setOpen(!open);
@@ -26,6 +32,7 @@ export default function DashboardUserLayout({ children }: { children: React.Reac
         <Header open={handleClick} />
         <Menu open={open} setOpen={setOpen} />
         {children}
+        {modal}
       </div>
     </div>
   );
