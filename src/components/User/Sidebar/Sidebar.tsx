@@ -81,7 +81,7 @@ const Sidebar = () => {
           <MdOutlineKeyboardDoubleArrowRight
             size={30}
             onClick={handleClickClose}
-            className=" text-gray-600 cursor-pointer"
+            className={` ${miniSize ? 'hidden' : 'block'} text-gray-600  cursor-pointer`}
           />
         ) : (
           <MdMenuOpen

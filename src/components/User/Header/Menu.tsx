@@ -39,7 +39,7 @@ const Menu = ({ open, setOpen }: { open: Boolean; setOpen: Function }) => {
     <div
       className={` ${
         open ? 'absolute top-0' : ' absolute hidden'
-      } overflow-hidden bg-transparent transition-all delay-200 w-screen h-screen`}
+      } overflow-hidden bg-transparent transition-all delay-200 w-screen h-screen z-50`}
     >
       {open && (
         <section
