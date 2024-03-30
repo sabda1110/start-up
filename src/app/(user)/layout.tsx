@@ -26,7 +26,7 @@ export default function DashboardUserLayout({
     document.body.classList.add('overflow-hidden');
   }
   return (
-    <div className=" w-svw overflow-hidden border h-screen flex  ">
+    <div className=" w-svw overflow-hidden  h-screen flex  ">
       <Sidebar />
       <div className=" w-full relative">
         <Header open={handleClick} />

@@ -35,25 +35,26 @@ const navItem = [
 
 const Menu = ({ open, setOpen }: { open: Boolean; setOpen: Function }) => {
   const pathname = usePathname();
+
   return (
     <div
       className={` ${
-        open ? 'absolute top-0' : ' absolute hidden'
-      } overflow-hidden bg-transparent transition-all delay-200 w-screen h-screen z-50`}
+        open ? 'top-0 z-50  ' : ' -translate-x-full'
+      } overflow-hidden  w-screen h-screen absolute `}
     >
       {open && (
         <section
           onClick={() => setOpen(false)}
           className={`${
             open ? 'translate-x-0' : 'translate-x-0'
-          } absolute top-0 left-0 border  w-screen h-screen bg-gradient-to-r z-10 from-[#F8F8F8]/50 to-[#000]/85 `}
+          } absolute top-0 left-0   w-screen h-screen bg-gradient-to-r z-10 from-[#F8F8F8]/50 to-[#000]/85 `}
         ></section>
       )}
 
       <section
         className={`${
           open ? 'translate-x-0' : '-translate-x-full'
-        } absolute top-0 left-0 transition-all ease-in-out delay-100 w-[60vw]  h-screen bg-white z-50 shadow-lg border flex flex-col items-center`}
+        } absolute top-0 left-0 transition-all ease-in-out duration-500 w-[60vw]  h-screen bg-white z-50 shadow-lg border flex flex-col items-center`}
       >
         <Image src={'/Images/logo.png'} alt="Logo" width={104} height={41} className="" />
         <div className="profile w-[80%] h-[25%] flex flex-col items-center gap-2 py-2  mt-8 box-border  rounded-md bg-[#f2f9ff]">
