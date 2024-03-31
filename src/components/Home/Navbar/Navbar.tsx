@@ -10,6 +10,7 @@ import useMediaQuery from '@/utils/hooks/useMediaQuery';
 import { signOut } from 'next-auth/react';
 import { IoIosLogOut } from 'react-icons/io';
 import { MdOutlineDashboard } from 'react-icons/md';
+import { AiOutlineLoading } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 
 const navItem = [
@@ -87,14 +88,19 @@ const Navbar = ({ session }: { session?: any }) => {
         ) : (
           <button
             onClick={() => setShow(!show)}
-            className="bg-[#9FD685] font-medium px-4 py-2 text-[#123813] rounded-md"
+            disabled={session === null ? true : false}
+            className="bg-[#9FD685] hover:bg-[#8dc872] rounded-full w-[50px] h-[50px] text-center font-medium  text-[#123813] "
           >
-            {session?.user?.name}
+            {session?.user?.name
+              .split(' ')
+              .slice(0, 2)
+              .map((n: string) => n[0])
+              .join('') || <AiOutlineLoading size={26} className="animate-spin mx-auto " />}
           </button>
         )}
 
         {show && (
-          <section className=" absolute w-[200px] text-[#212B36]  rounded-lg flex-col bg-white shadow-md right-0 top-12 z-50  border flex items-center justify-center p-2 ">
+          <section className=" absolute w-[200px] text-[#212B36]  rounded-lg flex-col bg-white shadow-md right-0 top-14 z-50  border flex items-center justify-center p-2 ">
             <div
               onClick={() => router.push('/dashboard-user')}
               className=" hover:bg-gray-200 cursor-pointer rounded-md flex items-center w-full justify-start gap-x-5 text-center p-4"

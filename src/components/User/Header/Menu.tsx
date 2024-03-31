@@ -39,21 +39,21 @@ const Menu = ({ open, setOpen }: { open: Boolean; setOpen: Function }) => {
   return (
     <div
       className={` ${
-        open ? 'top-0 z-50  ' : ' -translate-x-full'
-      } overflow-hidden  w-screen h-screen absolute `}
+        open ? 'top-0 z-50  ' : ' -translate-x-full md:hidden'
+      } overflow-hidden    w-screen h-screen absolute `}
     >
       {open && (
         <section
           onClick={() => setOpen(false)}
           className={`${
-            open ? 'translate-x-0' : 'translate-x-0'
+            open ? 'translate-x-0' : ' -translate-x-full'
           } absolute top-0 left-0   w-screen h-screen bg-gradient-to-r z-10 from-[#F8F8F8]/50 to-[#000]/85 `}
         ></section>
       )}
 
       <section
         className={`${
-          open ? 'translate-x-0' : '-translate-x-full'
+          open ? 'translate-x-0' : '-translate-x-full  '
         } absolute top-0 left-0 transition-all ease-in-out duration-500 w-[60vw]  h-screen bg-white z-50 shadow-lg border flex flex-col items-center`}
       >
         <Image src={'/Images/logo.png'} alt="Logo" width={104} height={41} className="" />
