@@ -6,7 +6,7 @@ const ModalPage = (props: any) => {
   const { params } = props;
   return (
     <Modal>
-      <div className=" absolute  text-center z-50 left-0 right-0 top-40">
+      <div className=" absolute  text-center z-50 left-0 right-0 md:top-40 top-32">
         <h2 className="text-[2rem] font-semibold text-[#242424]">Article</h2>
         <p className=" mt-20 px-10 text-[#242424] font-normal">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi deleniti illo nulla, quia

@@ -17,7 +17,7 @@ const Modal = ({ children }: { children: React.ReactNode }) => {
       onClick={close}
       className="fixed z-50 left-0 right-0 top-0 bottom-0 mx-auto bg-black/60"
     >
-      <div className=" absolute overflow-hidden  top-1/2 left-2/3  -translate-x-1/2 -translate-y-1/2 p-6 rounded-md md:w-[689px] md:h-[629px] w-[200px] h-[200px]">
+      <div className=" absolute overflow-hidden  top-1/2 left-1/2 md:left-2/3   -translate-x-1/2 -translate-y-1/2 p-6 rounded-md md:w-[689px] md:h-[629px] w-full h-[600px]">
         <section className="w-full h-full relative rounded-md">
           <Image
             src={'/Images/logo.png'}
@@ -25,7 +25,7 @@ const Modal = ({ children }: { children: React.ReactNode }) => {
             width={200}
             height={200}
             style={{ objectFit: 'contain' }}
-            className=" absolute z-50 right-6"
+            className=" absolute z-50 md:right-6 right-1 md:w-[200px] w-[140px]  "
           />
           <Image
             src={'/Images/modalBackground.jpg'}
@@ -39,7 +39,7 @@ const Modal = ({ children }: { children: React.ReactNode }) => {
         </section>
       </div>
 
-      <div className=" md:w-[500px] md:h-[500px] flex  flex-col items-center justify-center shadow-2xl bg-white absolute overflow-auto top-1/2 left-[32%] rounded-3xl -translate-x-1/2 -translate-y-1/2">
+      <div className=" md:w-[500px] md:h-[500px] hidden md:flex  flex-col items-center justify-center shadow-2xl bg-white absolute overflow-auto top-1/2 left-[32%] rounded-3xl -translate-x-1/2 -translate-y-1/2">
         <Image src={'/Images/iconDocument.jpg'} alt="Document" width={350} height={350} />
         <section className=" flex absolute bottom-0 p-4 gap-4 items-center  w-full ">
           <Image src={'/Images/google.png'} alt="Google Icon" width={30} height={30} />
