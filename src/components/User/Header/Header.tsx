@@ -27,7 +27,7 @@ const Header = ({ open }: { open: Function }) => {
     };
   }, []);
   return (
-    <div className=" p-4   py-6 w-full h-[92px] flex lg:justify-end md:justify-end justify-between items-center ">
+    <div className=" p-4 sticky bg-white border-b border-gray-200 top-0 right-0   py-6 w-full h-[92px] flex lg:justify-end md:justify-end justify-between items-center ">
       <HiMenuAlt2
         onClick={() => open(true)}
         className=" lg:hidden md:hidden block text-[#637381] cursor-pointer"

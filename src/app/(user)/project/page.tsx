@@ -31,7 +31,7 @@ const dataItem = [
 
 const ProjectUserPage = () => {
   return (
-    <div className="w-full h-screen border p-4  mb-28  overflow-y-scroll overflow-scroll  grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 bg-[#f4f6f8] gap-4 items-center justify-center mx-auto ">
+    <div className="w-full h-screen  p-4  mb-28 md:mb-0   grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 bg-[#f4f6f8] gap-4 items-center justify-center mx-auto ">
       {dataItem.map((item: { name: string; src: string }, index) => (
         <section
           key={index}
