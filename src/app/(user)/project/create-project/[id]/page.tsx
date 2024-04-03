@@ -17,7 +17,7 @@ const createProjectPage = () => {
           </span>
           <p>Informasi Tugas</p>
         </div>
-        <span className="w-[200px] h-[5px] bg-gray-600 -ml-12 -mt-8 border"></span>
+        <span className="w-[200px] h-[5px] bg-gray-600 ml-[-2.55rem] -mt-8 border"></span>
         <div className=" flex flex-col gap-2 items-center -ml-7">
           <span className=" w-[30px] h-[30px] block  pt-[0.18rem] bg-gray-400 text-white    text-center rounded-full">
             2
