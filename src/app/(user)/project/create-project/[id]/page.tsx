@@ -10,15 +10,15 @@ const createProjectPage = () => {
         <p className=" w-[90px] ">Form Regis</p>
       </section>
 
-      <section className=" w-full relative  h-[50px] flex items-center justify-center text-[#242424] ">
-        <div className=" flex flex-col gap-2 items-center">
+      <section className=" w-full relative  h-[50px] flex items-center justify-center text-[#242424] md:mt-1 mt-5 ">
+        <div className=" flex flex-col gap-2 items-center z-20">
           <span className=" w-[30px] h-[30px] block  pt-[0.18rem] bg-green-400 text-white    text-center rounded-full">
             1
           </span>
           <p>Informasi Tugas</p>
         </div>
-        <span className="w-[200px] h-[5px] bg-gray-600 ml-[-2.55rem] -mt-8 border"></span>
-        <div className=" flex flex-col gap-2 items-center -ml-7">
+        <span className="w-[200px] h-[5px] bg-gray-600 ml-[-3.5rem] z-10 -mt-8 border"></span>
+        <div className=" flex flex-col gap-2 items-center -ml-10 z-20">
           <span className=" w-[30px] h-[30px] block  pt-[0.18rem] bg-gray-400 text-white    text-center rounded-full">
             2
           </span>
