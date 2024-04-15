@@ -1,7 +1,8 @@
 'use client';
-import { useRef, useState, useEffect } from 'react';
 
-const InputText = ({
+import { useState, useRef, useEffect } from 'react';
+
+const InputFile = ({
   judul,
   name,
   Icon,
@@ -14,19 +15,18 @@ const InputText = ({
   prioritas: boolean;
   formik: any;
 }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
   const [active, setActive] = useState<Boolean>(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [file, setFile] = useState('');
+
   const handleActive = () => {
-    inputRef.current?.focus();
+    inputRef.current?.click();
     setActive(true);
   };
 
   useEffect(() => {
     const handle: any = (e: React.MouseEvent<any, MouseEvent>) => {
-      if (
-        !inputRef.current?.contains(e.target as HTMLButtonElement) &&
-        formik.values?.[name] === ''
-      ) {
+      if (!inputRef.current?.contains(e.target as HTMLButtonElement) && file === '') {
         setActive(false);
       }
     };
@@ -34,37 +34,29 @@ const InputText = ({
     document.addEventListener('mousedown', handle);
 
     return () => document.removeEventListener('mousedown', handle);
-  }, [formik.values[name]]);
+  }, [file]);
 
   return (
     <div
       onClick={handleActive}
-      className={` border ${
+      className={`w-full relative h-[50px] px-4 flex justify-between items-center md:w-[30%] border rounded-md ${
         active ? 'border-blue-200' : 'border-gray-400'
-      } w-full md:w-[30%] rounded-md h-[50px] mt-2 relative flex justify-between items-center px-4`}
+      }`}
     >
+      <input ref={inputRef} type="file" hidden accept="application/pdf,application/vnd.ms-excel" />
       <span
         className={`${
           active
             ? '  top-[-0.65rem] left-3 text-[0.8rem] text-blue-500 font-semibold'
-            : ' top-[0.7rem]  text-[1rem] text-gray-400 '
-        }  transition-all  absolute  ease-in-out duration-500  bg-white  `}
+            : ' top-[0.7rem] w-[50%]  text-[1rem] text-gray-400 '
+        }  transition-all  absolute    ease-in-out duration-500  bg-white  `}
       >
         {judul}
       </span>
-      <input
-        type="text"
-        ref={inputRef}
-        onChange={formik.handleChange}
-        value={formik.values[name]}
-        name={name}
-        id={name}
-        required={prioritas}
-        className=" w-[80%] outline-none"
-      />
+      <span>Pilih File</span>
       <Icon size={30} className={`w-[20%] ${active ? 'text-blue-500' : 'text-gray-400'}`} />
     </div>
   );
 };
 
-export default InputText;
+export default InputFile;

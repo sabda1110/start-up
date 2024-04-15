@@ -1,9 +1,14 @@
 'use client';
 
-import InputDate from '../atom/inputDate/InputDate';
-import InputText from '../atom/inputText/InputText';
 import { MdOutlineSubtitles, MdOutlinePersonOutline } from 'react-icons/md';
-import InputTextArea from '../atom/inputTextArea/InputTextArea';
+import { FaRegFileAlt } from 'react-icons/fa';
+import { Formik, useFormik } from 'formik';
+import dynamic from 'next/dynamic';
+
+const InputDate = dynamic(() => import('../../atom/inputDate/InputDate'));
+const InputText = dynamic(() => import('../../atom/inputText/InputText'));
+const InputFile = dynamic(() => import('../../atom/InputFile/InputFile'));
+const InputTextArea = dynamic(() => import('../../atom/inputTextArea/InputTextArea'));
 
 const dataInput: inputTypeForm[] = [
   {
@@ -39,10 +44,35 @@ const dataInput: inputTypeForm[] = [
     name: 'description',
     input: InputTextArea,
     prioritas: false
+  },
+  {
+    label: 'File Tambahan (Optional)',
+    desc: 'Jika ada file soal ataupun file yang membantu mungkin bisa dapat disertakan dalam satu PDF',
+    judul: 'File Tambahan',
+    name: 'file',
+    input: InputFile,
+    icon: FaRegFileAlt,
+    prioritas: false
   }
 ];
 
-const FormInput = () => {
+const FormInput = ({ page }: { page: number }) => {
+  const handleSubmit = () => {
+    console.log('oke');
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      deadline: '',
+      article: '',
+      namaPengguna: '',
+      description: '',
+      file: '',
+      type: 'article'
+    },
+    onSubmit: handleSubmit
+  });
+
   return (
     <div className=" w-full h-full    bg-white mt-5 ml-4 md:ml-0 p-4 rounded-xl shadow-md">
       <form action="" className=" flex flex-col gap-y-8">
@@ -52,7 +82,7 @@ const FormInput = () => {
               {data.label} {data.prioritas ? <span className="text-red-500">*</span> : ''}
             </label>
             <p className=" text-[0.7rem] md:text-[0.9rem] text-[#9CA3AF]">{data.desc}</p>
-            <data.input judul={data.judul} name={data.name} Icon={data.icon} />
+            <data.input judul={data.judul} formik={formik} name={data.name} Icon={data.icon} />
           </section>
         ))}
       </form>

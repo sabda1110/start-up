@@ -5,15 +5,16 @@ import { useRef, useState, useEffect } from 'react';
 const InputDate = ({
   judul,
   name,
-  prioritas
+  prioritas,
+  formik
 }: {
   judul: string;
   name: string;
   prioritas: boolean;
+  formik: any;
 }) => {
   const [active, setActive] = useState<Boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const [tanggal, setTanggal] = useState('');
 
   const handleActive = () => {
     inputRef.current?.focus();
@@ -22,7 +23,10 @@ const InputDate = ({
 
   useEffect(() => {
     const handle: any = (e: React.MouseEvent<any, MouseEvent>) => {
-      if (!inputRef.current?.contains(e.target as HTMLButtonElement) && tanggal === '') {
+      if (
+        !inputRef.current?.contains(e.target as HTMLButtonElement) &&
+        formik.values?.[name] === ''
+      ) {
         setActive(false);
       }
     };
@@ -30,7 +34,7 @@ const InputDate = ({
     document.addEventListener('mousedown', handle);
 
     return () => document.removeEventListener('mousedown', handle);
-  }, [tanggal]);
+  }, [formik.values[name]]);
 
   return (
     <div
@@ -51,8 +55,8 @@ const InputDate = ({
       <input
         ref={inputRef}
         type="date"
-        onChange={(e) => setTanggal(e.target.value)}
-        value={tanggal}
+        onChange={formik.handleChange}
+        value={formik.values?.[name]}
         name={name}
         id={name}
         required={prioritas}

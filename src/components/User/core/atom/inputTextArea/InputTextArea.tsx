@@ -1,4 +1,4 @@
-const InputTextArea = ({ judul, name }: { judul: String; name: string }) => {
+const InputTextArea = ({ judul, name, formik }: { judul: String; name: string; formik: any }) => {
   return (
     <div className="w-full h-[30%] md:h-[80%]">
       <textarea

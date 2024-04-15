@@ -7,3 +7,11 @@ type inputTypeForm = {
   icon?: any;
   prioritas: boolean;
 };
+
+type inputParamsProject = {
+  id: string;
+};
+
+type inputProps = {
+  params: inputParamsProject;
+};

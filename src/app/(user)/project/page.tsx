@@ -5,34 +5,40 @@ import Link from 'next/link';
 const dataItem = [
   {
     name: 'Front End Developer',
-    src: '/Images/front-end.png'
+    src: '/Images/front-end.png',
+    link: '/Web'
   },
   {
     name: 'Back End Developer',
-    src: '/Images/back-end.png'
+    src: '/Images/back-end.png',
+    link: '/Web'
   },
   {
     name: 'Article',
-    src: '/Images/article-icon.png'
+    src: '/Images/article-icon.png',
+    link: '/Article'
   },
   {
     name: 'Turnitin',
-    src: '/Images/turnitin-icon.png'
+    src: '/Images/turnitin-icon.png',
+    link: '/Article'
   },
   {
     name: 'Skripsi',
-    src: '/Images/article-icon.png'
+    src: '/Images/article-icon.png',
+    link: '/Article'
   },
   {
     name: 'Lainnya',
-    src: '/Images/project-lainnya.png'
+    src: '/Images/project-lainnya.png',
+    link: '/Article'
   }
 ];
 
 const ProjectUserPage = () => {
   return (
     <div className="w-full h-screen  p-4  mb-28 md:mb-0   grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 bg-[#f4f6f8] gap-4 items-center justify-center mx-auto ">
-      {dataItem.map((item: { name: string; src: string }, index) => (
+      {dataItem.map((item: { name: string; src: string; link: string }, index) => (
         <section
           key={index}
           className="lg:w-[380px] md:w-[300px] mx-auto  w-[380px] h-[260px] shadow-lg bg-white rounded-lg flex flex-col items-center justify-center gap-2 "
@@ -45,9 +51,12 @@ const ProjectUserPage = () => {
             height={100}
             style={{ objectFit: 'contain', objectPosition: 'center' }}
           />
-          <button className=" border w-[60%] h-[35px] rounded-2xl bg-[#4a4a4a] font-semibold text-white text-[0.8rem]">
+          <Link
+            href={`/project/create-project/${item.link}`}
+            className=" border w-[60%] h-[35px] rounded-2xl bg-[#4a4a4a] font-semibold flex items-center justify-center text-white text-[0.8rem]"
+          >
             Buat Project
-          </button>
+          </Link>
           <Link
             href={'/detail/123'}
             className=" text-[#4a4a4a] font-semibold text-[0.8rem] cursor-pointer hover:underline"
