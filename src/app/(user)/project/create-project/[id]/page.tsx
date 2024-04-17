@@ -54,16 +54,12 @@ const createProjectPage = (props: inputProps) => {
           <p>Konfirmasi</p>
         </div>
       </section>
-      {params.id === 'Article' && <FormInput page={page} />}
+      {params.id === 'Article' && (
+        <FormInput page={page} setPage={setPage} handleNext={handleClickNext} />
+      )}
       {params.id === 'Web' && (
         <FormInputWeb page={page} setPage={setPage} handleNext={handleClickNext} />
       )}
-      {/* <section className="button flex justify-between w-full mt-3">
-        <span></span>
-        <button className=" border w-[40%] md:w-[20%] px-4 py-2  rounded-2xl bg-[#3B82F6] transition-all ease-in-out duration-300 hover:scale-110 font-semibold text-white text-[0.8rem]">
-          Selanjutnya <span className=" ml-3 text-[1rem]">{`>`}</span>
-        </button>
-      </section> */}
     </div>
   );
 };
