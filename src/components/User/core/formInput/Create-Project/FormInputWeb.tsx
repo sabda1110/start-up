@@ -10,6 +10,7 @@ const InputText = dynamic(() => import('../../atom/inputText/InputText'));
 const InputFile = dynamic(() => import('../../atom/InputFile/InputFile'));
 const InputTextArea = dynamic(() => import('../../atom/inputTextArea/InputTextArea'));
 const DataInput = dynamic(() => import('./atom/dataInput/DataInput'));
+const ValidasiPage = dynamic(() => import('./atom/validasi/Validasi'));
 
 const dataInput: inputTypeForm[] = [
   {
@@ -95,13 +96,25 @@ const FormInputWeb = ({
   return (
     <div className="w-full  h-full mb-28 bg-white mt-5 ml-4 md:ml-0 p-4 rounded-xl shadow-md">
       <form action="" onSubmit={formik.handleSubmit} className="  flex flex-col gap-y-8">
-        <DataInput dataInput={dataInput} formik={formik} />
+        {page === 1 && <DataInput dataInput={dataInput} formik={formik} />}
+        {page === 2 && <ValidasiPage />}
+
         <section className="button  mt-3  flex justify-between w-full ">
-          <span></span>
+          {page === 1 && <span />}
+          {page === 2 && (
+            <button
+              className=" flex items-center gap-3 font-semibold"
+              onClick={() => setPage(1)}
+              type="button"
+            >
+              <span>{`<`}</span> Kembali
+            </button>
+          )}
+
           <button
             type={`${page === 2 ? 'submit' : 'button'}`}
             onClick={() => {
-              page === 2 ? handleSubmit() : handleNext();
+              page === 1 && handleNext();
             }}
             className=" border w-[40%] md:w-[20%] px-4 py-2  rounded-2xl bg-[#3B82F6] transition-all ease-in-out duration-300 hover:scale-110 font-semibold text-white text-[0.8rem] outline-blue-600"
           >

@@ -54,7 +54,9 @@ const createProjectPage = (props: inputProps) => {
           <p>Konfirmasi</p>
         </div>
       </section>
-      {params.id === 'Article' && <FormInput page={page} />}
+      {params.id === 'Article' && (
+        <FormInput page={page} setPage={setPage} handleNext={handleClickNext} />
+      )}
       {params.id === 'Web' && (
         <FormInputWeb page={page} setPage={setPage} handleNext={handleClickNext} />
       )}
