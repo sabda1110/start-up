@@ -9,6 +9,7 @@ const InputDate = dynamic(() => import('../../atom/inputDate/InputDate'));
 const InputText = dynamic(() => import('../../atom/inputText/InputText'));
 const InputFile = dynamic(() => import('../../atom/InputFile/InputFile'));
 const InputTextArea = dynamic(() => import('../../atom/inputTextArea/InputTextArea'));
+const DataInput = dynamic(() => import('./atom/dataInput/DataInput'));
 
 const dataInput: inputTypeForm[] = [
   {
@@ -94,23 +95,18 @@ const FormInputWeb = ({
   return (
     <div className="w-full  h-full mb-28 bg-white mt-5 ml-4 md:ml-0 p-4 rounded-xl shadow-md">
       <form action="" onSubmit={formik.handleSubmit} className="  flex flex-col gap-y-8">
-        {dataInput.map((data: inputTypeForm, index: any) => (
-          <section key={index} className=" flex flex-col gap-y-2">
-            <label htmlFor={data.name} className=" font-semibold text-[1rem] text-[#1F2937]">
-              {data.label} {data.prioritas ? <span className="text-red-500">*</span> : ''}
-            </label>
-            <p className=" text-[0.7rem] md:text-[0.9rem] text-[#9CA3AF]">{data.desc}</p>
-            <data.input judul={data.judul} formik={formik} name={data.name} Icon={data.icon} />
-          </section>
-        ))}
+        <DataInput dataInput={dataInput} formik={formik} />
         <section className="button  mt-3  flex justify-between w-full ">
           <span></span>
           <button
-            type="button"
-            onClick={() => handleNext()}
-            className=" border w-[40%] md:w-[20%] px-4 py-2  rounded-2xl bg-[#3B82F6] transition-all ease-in-out duration-300 hover:scale-110 font-semibold text-white text-[0.8rem]"
+            type={`${page === 2 ? 'submit' : 'button'}`}
+            onClick={() => {
+              page === 2 ? handleSubmit() : handleNext();
+            }}
+            className=" border w-[40%] md:w-[20%] px-4 py-2  rounded-2xl bg-[#3B82F6] transition-all ease-in-out duration-300 hover:scale-110 font-semibold text-white text-[0.8rem] outline-blue-600"
           >
-            Selanjutnya <span className=" ml-3 text-[1rem]">{`>`}</span>
+            {page === 2 ? 'Buat Pekerjaan' : 'Selanjutnya'}{' '}
+            <span className=" ml-3 text-[1rem]">{`>`}</span>
           </button>
         </section>
       </form>

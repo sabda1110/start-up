@@ -39,6 +39,10 @@ const InputText = ({
   return (
     <div
       onClick={handleActive}
+      onKeyUp={handleActive}
+      onKeyDown={() => {
+        if (formik.values?.[name] === '') setActive(false);
+      }}
       className={` border ${
         active ? 'border-blue-200' : 'border-gray-400'
       } w-full md:w-[30%] rounded-md h-[50px] mt-2 relative flex justify-between items-center px-4`}
