@@ -35,7 +35,7 @@ const ValidasiPage = () => {
   return (
     <div>
       <h1 className="text-xl font-bold text-[#212B36]">Kode Etika Tumutuku</h1>
-      <section className=" w-full p-4 rounded-md bg-[#DBEAFE] text-[0.9rem] mt-5 text-[#6B7280]">
+      <section className=" w-full p-4 rounded-md bg-[#DBEAFE] text-[0.7rem] md:text-[0.9rem] mt-5 text-[#6B7280]">
         Selamat, Anda sudah berhasil mengisi formulir lowongan! Sebelum memposting-nya, yuk
         aplikasikan tips berikut agar lowongan Anda diminati banyak pelamar.
       </section>
@@ -44,14 +44,14 @@ const ValidasiPage = () => {
         {itemValidasi.map((item: { icon: any; desc: string }, index: any) => (
           <div className=" flex gap-x-4 w-full items-center">
             {item.icon}
-            <p className=" text-[#374151]">{item.desc}</p>
+            <p className=" text-[#374151] text-[0.7rem] md:text-[0.9rem]">{item.desc}</p>
           </div>
         ))}
       </section>
 
       <section className="input mt-3 flex gap-6 items-center">
         <input type="checkbox" name="validasi" id="validasi" />
-        <label htmlFor="validasi" className=" text-[] font-semibold">
+        <label htmlFor="validasi" className=" text-[0.7rem] md:text-[0.9rem] font-semibold">
           Menyetujui kode etik pekerjaan yang diajukan Tumutuku
         </label>
       </section>

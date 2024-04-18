@@ -9,6 +9,14 @@ const FormInput = dynamic(
 const FormInputWeb = dynamic(
   () => import('@/components/User/core/formInput/Create-Project/FormInputWeb')
 );
+
+const FormInputTurnitin = dynamic(
+  () => import('@/components/User/core/formInput/Create-Project/FormInputTurnitin')
+);
+
+const FormInputSkripsi = dynamic(
+  () => import('@/components/User/core/formInput/Create-Project/FormInputSkripsi')
+);
 const createProjectPage = (props: inputProps) => {
   const { params } = props;
   const [page, setPage] = useState<number>(1);
@@ -20,6 +28,15 @@ const createProjectPage = (props: inputProps) => {
       block: 'start',
       inline: 'nearest'
     }); // Menggunakan optional chaining untuk memastikan elemen ref ada
+  };
+
+  const handleClickBack = () => {
+    setPage((prev) => prev - 1);
+    containerRef?.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest'
+    });
   };
 
   return (
@@ -59,6 +76,17 @@ const createProjectPage = (props: inputProps) => {
       )}
       {params.id === 'Web' && (
         <FormInputWeb page={page} setPage={setPage} handleNext={handleClickNext} />
+      )}
+      {params.id === 'Turnitin' && (
+        <FormInputTurnitin
+          page={page}
+          setPage={setPage}
+          handleNext={handleClickNext}
+          handleBack={handleClickBack}
+        />
+      )}
+      {params.id === 'Skripsi' && (
+        <FormInputSkripsi page={page} setPage={setPage} handleNext={handleClickNext} />
       )}
     </div>
   );

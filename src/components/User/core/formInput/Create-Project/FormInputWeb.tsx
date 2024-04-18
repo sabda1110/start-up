@@ -94,7 +94,7 @@ const FormInputWeb = ({
   });
 
   return (
-    <div className="w-full  h-full mb-28 bg-white mt-5 ml-4 md:ml-0 p-4 rounded-xl shadow-md">
+    <div className="w-full  h-full mb-28 bg-white mt-5  p-4 rounded-xl shadow-md">
       <form action="" onSubmit={formik.handleSubmit} className="  flex flex-col gap-y-8">
         {page === 1 && <DataInput dataInput={dataInput} formik={formik} />}
         {page === 2 && <ValidasiPage />}

@@ -1,4 +1,4 @@
-const DataInput = ({ dataInput, formik }: { dataInput: inputTypeForm[]; formik: fucntion }) => {
+const DataInput = ({ dataInput, formik }: { dataInput: inputTypeForm[]; formik: any }) => {
   const tampilan = dataInput.map((data: inputTypeForm, index: any) => (
     <fieldset key={index} className=" flex flex-col gap-y-2">
       <label htmlFor={data.name} className=" font-semibold text-[1rem] text-[#1F2937]">

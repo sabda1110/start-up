@@ -1,9 +1,9 @@
 'use client';
 
-import { MdOutlineSubtitles, MdOutlinePersonOutline } from 'react-icons/md';
-import { FaRegFileAlt } from 'react-icons/fa';
-import { Formik, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import dynamic from 'next/dynamic';
+import { MdOutlinePersonOutline, MdPhoneEnabled } from 'react-icons/md';
+import { FaRegFileAlt } from 'react-icons/fa';
 
 const InputDate = dynamic(() => import('../../atom/inputDate/InputDate'));
 const InputText = dynamic(() => import('../../atom/inputText/InputText'));
@@ -22,13 +22,13 @@ const dataInput: inputTypeForm[] = [
     prioritas: true
   },
   {
-    label: 'Judul Article',
-    desc: 'Buatlah judul article sesuai kata kunci yang umum digunakan. Ini akan memudahkan worker mengerjakan tugas Anda',
-    judul: 'Judul Article',
-    name: 'article',
-    input: InputText,
-    icon: MdOutlineSubtitles,
-    prioritas: true
+    label: 'File Skripsi/Jurnal/Article',
+    desc: 'Kirim file skripsi/jurnal/article untuk menurunkan plagiarisme. Diharpkan mengirim format Word/PDF',
+    judul: 'File Turnitin',
+    name: 'file',
+    input: InputFile,
+    icon: FaRegFileAlt,
+    prioritas: false
   },
   {
     label: 'Nama Pengguna',
@@ -40,60 +40,63 @@ const dataInput: inputTypeForm[] = [
     prioritas: true
   },
   {
+    label: 'Phone Number',
+    desc: 'Buatlah Nomor Telepon yang dapat dihubungi dan aktif WhatsApp. Ini akan memudahkan worker mengerjakan tugas Anda',
+    judul: 'Phone Number',
+    name: 'phoneNumber',
+    input: InputText,
+    icon: MdPhoneEnabled,
+    prioritas: true
+  },
+  {
     label: 'Description (Optional)',
     desc: 'Buatlah description yang mudah dipahami. Ini akan memudahkan worker mengerjakan tugas Anda',
     judul: 'description',
     name: 'description',
     input: InputTextArea,
     prioritas: false
-  },
-  {
-    label: 'File Tambahan (Optional)',
-    desc: 'Jika ada file soal ataupun file yang membantu mungkin bisa dapat disertakan dalam satu PDF',
-    judul: 'File Tambahan',
-    name: 'file',
-    input: InputFile,
-    icon: FaRegFileAlt,
-    prioritas: false
   }
 ];
 
-const FormInput = ({
+const FormInputTurnitin = ({
   page,
   setPage,
-  handleNext
+  handleNext,
+  handleBack
 }: {
-  page: number;
+  page: Number;
   setPage: Function;
   handleNext: Function;
+  handleBack: Function;
 }) => {
   const handleSubmit = () => {
-    console.log('oke');
+    console.log('Oke Aja Dah');
   };
 
   const formik = useFormik({
     initialValues: {
       deadline: '',
-      article: '',
-      namaPengguna: '',
-      description: '',
       file: '',
-      type: 'article'
+      namaPengguna: '',
+      phoneNumber: '',
+      description: '',
+      type: 'turnitin'
     },
     onSubmit: handleSubmit
   });
 
   return (
-    <div className=" w-full h-full    bg-white mt-5  p-4 rounded-xl shadow-md">
-      <form action="" onSubmit={formik.handleSubmit} className=" flex flex-col gap-y-8">
+    <div className="w-full  h-full mb-28 bg-white mt-5  p-4 rounded-xl shadow-md">
+      <form action="" onSubmit={formik.handleSubmit} className="  flex flex-col gap-y-8">
         {page === 1 && <DataInput dataInput={dataInput} formik={formik} />}
         {page === 2 && <ValidasiPage />}
+
         <section className="button  mt-3  flex justify-between w-full ">
           {page === 1 && <span />}
           {page === 2 && (
             <button
               className=" flex items-center gap-3 font-semibold"
-              onClick={() => setPage(1)}
+              onClick={handleBack()}
               type="button"
             >
               <span>{`<`}</span> Kembali
@@ -116,4 +119,4 @@ const FormInput = ({
   );
 };
 
-export default FormInput;
+export default FormInputTurnitin;

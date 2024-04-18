@@ -21,12 +21,12 @@ const dataItem = [
   {
     name: 'Turnitin',
     src: '/Images/turnitin-icon.png',
-    link: '/Article'
+    link: '/Turnitin'
   },
   {
     name: 'Skripsi',
     src: '/Images/article-icon.png',
-    link: '/Article'
+    link: '/Skripsi'
   },
   {
     name: 'Lainnya',

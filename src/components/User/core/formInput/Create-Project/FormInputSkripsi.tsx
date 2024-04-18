@@ -22,10 +22,10 @@ const dataInput: inputTypeForm[] = [
     prioritas: true
   },
   {
-    label: 'Judul Article',
+    label: 'Judul Skripsi',
     desc: 'Buatlah judul article sesuai kata kunci yang umum digunakan. Ini akan memudahkan worker mengerjakan tugas Anda',
-    judul: 'Judul Article',
-    name: 'article',
+    judul: 'Judul Skripsi',
+    name: 'skripsi',
     input: InputText,
     icon: MdOutlineSubtitles,
     prioritas: true
@@ -58,12 +58,12 @@ const dataInput: inputTypeForm[] = [
   }
 ];
 
-const FormInput = ({
+const FormInputSkripsi = ({
   page,
   setPage,
   handleNext
 }: {
-  page: number;
+  page: Number;
   setPage: Function;
   handleNext: Function;
 }) => {
@@ -74,11 +74,11 @@ const FormInput = ({
   const formik = useFormik({
     initialValues: {
       deadline: '',
-      article: '',
+      skripsi: '',
       namaPengguna: '',
       description: '',
       file: '',
-      type: 'article'
+      type: 'skripsi'
     },
     onSubmit: handleSubmit
   });
@@ -116,4 +116,4 @@ const FormInput = ({
   );
 };
 
-export default FormInput;
+export default FormInputSkripsi;
