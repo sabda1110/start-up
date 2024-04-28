@@ -61,7 +61,7 @@ const MenuStatus = () => {
         ref={modalRef}
         className={` ${
           show ? 'flex' : 'hidden'
-        } absolute  w-full flex-col gap-y-3 transition-all ease-in-out delay-500 overflow-y-scroll h-[200px] bg-white border border-gray-300  top-[2.8rem] rounded-md p-4  left-0 `}
+        } absolute z-50  w-full flex-col gap-y-3 transition-all ease-in-out delay-500 overflow-y-scroll h-[200px] bg-white border border-gray-300  top-[2.8rem] rounded-md p-4  left-0 `}
       >
         {menuStatus.map((item: { name: string; link: string }, index: any) => (
           <p
