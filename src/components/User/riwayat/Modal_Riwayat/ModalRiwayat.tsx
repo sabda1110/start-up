@@ -4,7 +4,7 @@ const ModalRiwayat = () => {
   return (
     <div className="border rounded p-2">
       <div className="flex mb-2 items-center">
-        <div className="text-[#9CA3AF] flex-1">
+        <div className="text-[#9CA3AF]  flex-1">
           <p>Status diperbarui pada</p>
           <p>dd/mm/yyyy</p>
         </div>

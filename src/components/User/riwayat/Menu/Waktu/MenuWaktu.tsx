@@ -43,13 +43,13 @@ const MenuWaktu = () => {
       onClick={() => setShow(!show)}
       className="flex-1 hover:text-[#000] text-[#9CA3AF] border flex justify-between py-2 relative items-center rounded px-2"
     >
-      <p>Semua Status</p>
+      <p>Semua Jangka Waktu</p>
       <FaChevronDown />
       <div
         ref={modalRef}
         className={` ${
           show ? 'flex' : 'hidden'
-        } absolute  w-full flex-col gap-y-3 transition-all ease-in-out delay-500 overflow-y-scroll  bg-white border border-gray-300  top-[2.8rem] rounded-md p-4  left-0 `}
+        } absolute z-50  w-full flex-col gap-y-3 transition-all ease-in-out delay-500 overflow-y-scroll  bg-white border border-gray-300  top-[2.8rem] rounded-md p-4  left-0 `}
       >
         {menuStatus.map((item: { name: string; link: string }, index: any) => (
           <p

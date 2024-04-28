@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 import { FaArchive, FaChevronDown } from 'react-icons/fa';
 import dynamic from 'next/dynamic';
-
-const ModalRiwayat = dynamic(() => import('@/components/User/riwayat/Modal_Riwayat/ModalRiwayat'));
 const MenuStatus = dynamic(() => import('@/components/User/riwayat/Menu/Status/MenuStatus'));
 const MenuWaktu = dynamic(() => import('@/components/User/riwayat/Menu/Waktu/MenuWaktu'));
+const History = dynamic(() => import('@/components/User/riwayat/History/History'));
+
 const page = () => {
   return (
     <div className="my-8 p-4">
@@ -27,12 +27,7 @@ const page = () => {
             <FaChevronDown className="text-[#9CA3AF]" />
           </div>
         </section>
-        <section className="grid md:grid-cols-2 gap-2">
-          {Array.from({ length: 10 }, (_, index) => {
-            return <ModalRiwayat key={index} />;
-          })}
-          ;
-        </section>
+        <History />
       </div>
     </div>
   );
