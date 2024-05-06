@@ -1,8 +1,9 @@
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import Image from 'next/image';
+import Link from 'next/link';
 const ModalRiwayat = () => {
   return (
-    <div className="border rounded p-2">
+    <Link href={'/detail-riwayat/123'} className="border rounded p-2">
       <div className="flex mb-2 items-center">
         <div className="text-[#9CA3AF]  flex-1">
           <p>Status diperbarui pada</p>
@@ -24,7 +25,7 @@ const ModalRiwayat = () => {
           <p className="text-base text-[#6B7280]">Transstudio Mini Pekanbaru</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

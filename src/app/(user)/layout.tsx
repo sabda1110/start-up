@@ -8,10 +8,12 @@ import useMediaQuery from '@/utils/hooks/useMediaQuery';
 
 export default function DashboardUserLayout({
   children,
-  modal
+  modal,
+  modalRiwayat
 }: {
   children: React.ReactNode;
   modal: React.ReactNode;
+  modalRiwayat: React.ReactNode;
 }) {
   const [open, setOpen] = useState<Boolean>(false);
   const handleClick = () => {
@@ -33,6 +35,7 @@ export default function DashboardUserLayout({
         <Menu open={open} setOpen={setOpen} />
         {modal}
         {children}
+        {modalRiwayat}
       </div>
     </div>
   );
