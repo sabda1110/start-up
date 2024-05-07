@@ -35,13 +35,12 @@ const navItem = [
 
 const Menu = ({ open, setOpen }: { open: Boolean; setOpen: Function }) => {
   const pathname = usePathname();
-  console.log(open);
 
   return (
     <div
       className={` ${
         open ? 'top-0 z-50  ' : ' -translate-x-full '
-      } overflow-hidden  md:hidden    w-screen h-screen absolute `}
+      } overflow-hidden  md:hidden z-50    w-screen h-screen absolute `}
     >
       {open && (
         <section

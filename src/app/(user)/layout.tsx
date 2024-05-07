@@ -29,16 +29,14 @@ export default function DashboardUserLayout({
     document.body.classList.add('overflow-hidden');
   }
   return (
-    <div className=" w-svw overflow-x-hidden  flex  ">
+    <div className=" w-svw overflow-x-hidden  flex   ">
       <Sidebar />
-      <div className=" w-full relative">
+      <div className=" w-full relative ">
         <Header open={handleClick} />
+        {modalRiwayat}
+        {modal}
         <Menu open={open} setOpen={setOpen} />
-        <div className=" overflow-y-scroll h-screen">
-          {modal}
-          {modalRiwayat}
-          {children}
-        </div>
+        <div className=" overflow-y-scroll h-screen">{children}</div>
       </div>
     </div>
   );

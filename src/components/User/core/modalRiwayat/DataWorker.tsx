@@ -29,7 +29,12 @@ const DataWorker = () => {
         </Link>
       </div>
 
-      <div className=" w-full md:absolute md:bottom-0 h-[10%] text-center flex items-center justify-center font-bold text-white mt-6 bg-blue-400 rounded-md cursor-pointer hover:bg-blue-500">
+      <p className="text-[#4B5563] font-semibold mt-5 text-[0.7rem] md:text-[0.9rem] ">
+        Seluruh proses pengerjaan tugas anda dan pembayaran di harapkan melalui aplikasi tumutuku
+        agar proses aman{' '}
+      </p>
+
+      <div className=" w-full md:absolute md:bottom-0 h-[10%] md:py-0 py-6 text-center flex items-center justify-center font-bold text-white mt-6 bg-blue-400 rounded-md cursor-pointer hover:bg-blue-500">
         Pembayaran
       </div>
     </div>
