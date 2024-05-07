@@ -22,20 +22,23 @@ export default function DashboardUserLayout({
   };
 
   const isDesktop = useMediaQuery('(min-width: 768px)');
+
   if (isDesktop && open) {
     document.body.classList.remove('overflow-hidden');
   } else if (!isDesktop && open) {
     document.body.classList.add('overflow-hidden');
   }
   return (
-    <div className=" w-svw overflow-x-hidden h-screen flex  ">
+    <div className=" w-svw overflow-x-hidden  flex  ">
       <Sidebar />
-      <div className=" w-full relative overflow-y-scroll">
+      <div className=" w-full relative">
         <Header open={handleClick} />
         <Menu open={open} setOpen={setOpen} />
-        {modal}
-        {children}
-        {modalRiwayat}
+        <div className=" overflow-y-scroll h-screen">
+          {modal}
+          {modalRiwayat}
+          {children}
+        </div>
       </div>
     </div>
   );
