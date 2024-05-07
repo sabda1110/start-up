@@ -6,6 +6,8 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import DataWorker from '@/components/User/core/modalRiwayat/DataWorker';
+import DataTugas from '@/components/User/core/modalRiwayat/DataTugas';
 
 const ModalPageRiwayat = (props: any) => {
   const { params } = props;
@@ -21,7 +23,7 @@ const ModalPageRiwayat = (props: any) => {
             className=" text-gray-800 cursor-pointer"
             onClick={() => router.back()}
           />
-          <h2 className=" text-2xl text-gray-800 font-bold">Detail Tugas</h2>
+          <h2 className=" md:text-2xl text-xl text-gray-800 font-bold">Detail Tugas</h2>
         </section>
         <BsThreeDotsVertical size={30} className=" text-gray-800" />
       </div>
@@ -37,7 +39,7 @@ const ModalPageRiwayat = (props: any) => {
             style={{ objectFit: 'contain', objectPosition: 'center' }}
           />
           <div className=" ">
-            <h3 className=" text-xs text-gray-800 font-bold">Tugas Article</h3>
+            <h3 className=" md:text-xl text-[1rem] text-gray-800 font-bold">Tugas Article</h3>
             <p className="text-gray-500 text-[0.8rem]">Article Fisioterapi Otot</p>
           </div>
         </section>
@@ -45,6 +47,11 @@ const ModalPageRiwayat = (props: any) => {
           {love && <FaHeart size={25} className=" text-red-500 " />}
           {!love && <FaRegHeart size={25} className=" text-gray-400 " />}
         </section>
+      </div>
+
+      <div className=" grid md:grid-cols-2 gap-5 w-full ">
+        <DataTugas />
+        <DataWorker />
       </div>
     </ModalRiwayat>
   );
