@@ -39,8 +39,8 @@ const Menu = ({ open, setOpen }: { open: Boolean; setOpen: Function }) => {
   return (
     <div
       className={` ${
-        open ? 'top-0 z-50  ' : ' -translate-x-full md:hidden'
-      } overflow-hidden    w-screen h-screen absolute `}
+        open ? 'top-0 z-50  ' : ' -translate-x-full '
+      } overflow-hidden  md:hidden z-50    w-screen h-screen absolute `}
     >
       {open && (
         <section

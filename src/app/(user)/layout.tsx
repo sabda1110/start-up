@@ -8,10 +8,12 @@ import useMediaQuery from '@/utils/hooks/useMediaQuery';
 
 export default function DashboardUserLayout({
   children,
-  modal
+  modal,
+  modalRiwayat
 }: {
   children: React.ReactNode;
   modal: React.ReactNode;
+  modalRiwayat: React.ReactNode;
 }) {
   const [open, setOpen] = useState<Boolean>(false);
   const handleClick = () => {
@@ -20,19 +22,21 @@ export default function DashboardUserLayout({
   };
 
   const isDesktop = useMediaQuery('(min-width: 768px)');
+
   if (isDesktop && open) {
     document.body.classList.remove('overflow-hidden');
   } else if (!isDesktop && open) {
     document.body.classList.add('overflow-hidden');
   }
   return (
-    <div className=" w-svw overflow-x-hidden h-screen flex  ">
+    <div className=" w-svw overflow-x-hidden  flex   ">
       <Sidebar />
-      <div className=" w-full relative overflow-y-scroll">
+      <div className=" w-full relative ">
         <Header open={handleClick} />
-        <Menu open={open} setOpen={setOpen} />
+        {modalRiwayat}
         {modal}
-        {children}
+        <Menu open={open} setOpen={setOpen} />
+        <div className=" overflow-y-scroll h-screen">{children}</div>
       </div>
     </div>
   );
