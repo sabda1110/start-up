@@ -13,7 +13,7 @@ const DataTugas = () => {
         <section>
           <div className="flex items-center gap-4">
             <FaRegCalendarAlt size={20} className=" text-blue-400" />
-            <p className=" text-[#4B5563] font-light text-[0.9rem] md:text-[1.2rem]">Deadline</p>
+            <p className=" text-[#6B7280] font-medium text-[0.9rem] md:text-[1rem]">Deadline</p>
           </div>
           <p className=" text-gray-800 font-normal mt-2 text-[0.8rem] md:text-[1rem]">
             23 Mei 2024
@@ -22,14 +22,14 @@ const DataTugas = () => {
         <section>
           <div className="flex items-center gap-4">
             <VscTypeHierarchySub size={20} className=" text-blue-400" />
-            <p className=" text-[#4B5563] font-light text-[0.9rem] md:text-[1.2rem]">Type tugas</p>
+            <p className=" text-[#6B7280] font-medium text-[0.9rem] md:text-[1rem]">Type tugas</p>
           </div>
           <p className=" text-gray-800 font-normal mt-2 text-[0.8rem] md:text-[1rem]">Article</p>
         </section>
         <section>
           <div className="flex items-center gap-4">
             <MdOutlineMail size={20} className=" text-blue-400" />
-            <p className=" text-[#4B5563] font-light text-[0.9rem] md:text-[1.2rem]">Email user</p>
+            <p className=" text-[#6B7280] font-medium text-[0.9rem] md:text-[1rem]">Email user</p>
           </div>
           <p className=" text-gray-800 font-normal text-ellipsis mt-2 text-[0.8rem] md:text-[1rem]">
             rspn@gmail.com
@@ -38,20 +38,20 @@ const DataTugas = () => {
         <section>
           <div className="flex items-center gap-4">
             <FaMoneyBillWaveAlt size={20} className=" text-blue-400" />
-            <p className=" text-[#4B5563] font-light text-[0.9rem] md:text-[1.2rem]">Biaya</p>
+            <p className=" text-[#6B7280] font-medium text-[0.9rem] md:text-[1rem]">Biaya</p>
           </div>
           <p className=" text-gray-800 font-normal mt-2 text-[0.8rem] md:text-[1rem]">Rp 100.000</p>
         </section>
         <section>
           <div className="flex items-center gap-4">
             <FaAudioDescription size={20} className=" text-blue-400" />
-            <p className=" text-[#4B5563] font-light text-[0.9rem] md:text-[1.2rem]">Description</p>
+            <p className=" text-[#6B7280] font-medium text-[0.9rem] md:text-[1rem]">Description</p>
           </div>
         </section>
         <section>
           <div className="flex items-center gap-4">
             <FaFile size={20} className=" text-blue-400" />
-            <p className=" text-[#4B5563] font-light text-[0.9rem] md:text-[1.2rem]">File</p>
+            <p className=" text-[#6B7280] font-medium text-[0.9rem] md:text-[1rem]">File</p>
           </div>
           <p className=" text-gray-800 font-normal mt-2 text-[0.8rem] md:text-[1rem]">
             xyaxaat.pdf

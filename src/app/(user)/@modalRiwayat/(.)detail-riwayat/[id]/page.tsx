@@ -19,13 +19,12 @@ const ModalPageRiwayat = (props: any) => {
       <div className=" w-full mb-4 flex justify-between items-center">
         <section className=" flex items-center gap-x-4">
           <FaArrowLeft
-            size={30}
-            className=" text-gray-800 cursor-pointer"
+            className=" text-gray-800 cursor-pointer text-2xl md:text-4xl"
             onClick={() => router.back()}
           />
           <h2 className=" md:text-2xl text-xl text-gray-800 font-bold">Detail Tugas</h2>
         </section>
-        <BsThreeDotsVertical size={30} className=" text-gray-800" />
+        <BsThreeDotsVertical className=" text-gray-800 text-2xl md:text-4xl" />
       </div>
       <hr />
 
@@ -44,8 +43,8 @@ const ModalPageRiwayat = (props: any) => {
           </div>
         </section>
         <section onClick={() => setLove(!love)} className=" cursor-pointer">
-          {love && <FaHeart size={25} className=" text-red-500 " />}
-          {!love && <FaRegHeart size={25} className=" text-gray-400 " />}
+          {love && <FaHeart className=" text-red-500 text-2xl md:text-3xl " />}
+          {!love && <FaRegHeart className=" text-gray-400 text-2xl md:text-3xl " />}
         </section>
       </div>
 
