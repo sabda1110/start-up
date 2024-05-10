@@ -3,7 +3,9 @@ import { MdOutlineMail } from 'react-icons/md';
 import { FaWhatsapp } from 'react-icons/fa';
 import Link from 'next/link';
 
-const DataWorker = () => {
+const DataWorker = ({ handleOpen }: { handleOpen: Function }) => {
+  console.log(handleOpen);
+
   return (
     <div className=" relative">
       <h4 className=" text-gray-600 text-[1rem] font-semibold border-b-2 border-gray-200">
@@ -34,7 +36,10 @@ const DataWorker = () => {
         agar proses aman{' '}
       </p>
 
-      <div className=" w-full md:absolute md:bottom-0 h-[10%] md:py-0 py-6 text-center flex items-center justify-center font-bold text-white mt-6 bg-blue-400 rounded-md cursor-pointer hover:bg-blue-500">
+      <div
+        onClick={() => handleOpen()}
+        className=" w-full md:absolute md:bottom-0 h-[10%] md:py-0 py-6 text-center flex items-center justify-center font-bold text-white mt-6 bg-blue-400 rounded-md cursor-pointer hover:bg-blue-500"
+      >
         Pembayaran
       </div>
     </div>
