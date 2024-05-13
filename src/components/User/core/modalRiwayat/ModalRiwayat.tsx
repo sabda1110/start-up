@@ -6,7 +6,15 @@ import dynamic from 'next/dynamic';
 
 const ModalPembayaran = dynamic(() => import('./ModalPembayaran'));
 
-const ModalRiwayat = ({ children, open }: { children: React.ReactNode; open: Boolean }) => {
+const ModalRiwayat = ({
+  children,
+  open,
+  setOpen
+}: {
+  children: React.ReactNode;
+  open: Boolean;
+  setOpen: React.Dispatch<React.SetStateAction<Boolean>>;
+}) => {
   const refModal = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -22,7 +30,7 @@ const ModalRiwayat = ({ children, open }: { children: React.ReactNode; open: Boo
       onClick={close}
       className=" fixed   z-50 top-0 left-0 right-0 bottom-0 mx-auto bg-black/60"
     >
-      {open && <ModalPembayaran />}
+      {open && <ModalPembayaran backModal={setOpen} />}
 
       {!open && (
         <div className="absolute z-30 overflow-scroll top-1/2 left-1/2 bg-white  -translate-x-1/2 -translate-y-1/2 p-6 rounded-md h-[650px] w-[80%]  ">
