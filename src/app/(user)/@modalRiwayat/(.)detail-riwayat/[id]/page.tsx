@@ -13,14 +13,14 @@ const ModalPembayaran = dynamic(
 );
 const ModalPageRiwayat = (props: any) => {
   const { params } = props;
-  const [open, setOpen] = useState<Boolean>(false);
+  const [open, setOpen] = useState<Boolean>(true);
 
   const handleOpen = () => {
     setOpen((prev) => !prev);
   };
 
   return (
-    <ModalRiwayat open={open}>
+    <ModalRiwayat open={open} setOpen={setOpen}>
       <ModalDetail handleOpen={handleOpen} />
     </ModalRiwayat>
   );

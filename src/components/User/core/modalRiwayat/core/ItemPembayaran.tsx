@@ -5,7 +5,17 @@ import { useState, useRef, useEffect } from 'react';
 import { CiBank } from 'react-icons/ci';
 import { IoPerson } from 'react-icons/io5';
 
-const ItemPembayaran = ({ name, link }: { name: string; link: string }) => {
+const ItemPembayaran = ({
+  name,
+  link,
+  number,
+  username
+}: {
+  name: string;
+  link: string;
+  number: string;
+  username: string;
+}) => {
   const [show, setShow] = useState<Boolean>(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -37,11 +47,11 @@ const ItemPembayaran = ({ name, link }: { name: string; link: string }) => {
         <div className=" grid grid-cols-3  items-center md:w-[60%] w-full ">
           <CiBank size={25} className=" text-blue-500" />
           <p className=" col-span-2 font-semibold md:text-[1rem] text-[0.8rem] text-[#424242]">
-            1051687744
+            {number}
           </p>
           <IoPerson size={25} className=" text-blue-500" />
           <p className=" col-span-2 font-semibold md:text-[1rem] text-[0.8rem] text-[#424242]">
-            Sabda Setiawan
+            {username}
           </p>
         </div>
       )}

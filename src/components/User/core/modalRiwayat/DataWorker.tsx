@@ -4,8 +4,6 @@ import { FaWhatsapp } from 'react-icons/fa';
 import Link from 'next/link';
 
 const DataWorker = ({ handleOpen }: { handleOpen: Function }) => {
-  console.log(handleOpen);
-
   return (
     <div className=" relative">
       <h4 className=" text-gray-600 text-[1rem] font-semibold border-b-2 border-gray-200">
