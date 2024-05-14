@@ -6,7 +6,7 @@ const SkeletonRiwayat = () => {
           <div className="h-2 bg-slate-500 rounded "></div>
           <div className="h-2 bg-slate-500 rounded mt-3 "></div>
         </div>
-        <div className="h-2 w-[80px] bg-slate-700 rounded "></div>
+        <div className="h-2 w-[80px] bg-slate-500 rounded "></div>
       </div>
 
       <hr />

@@ -45,9 +45,11 @@ const dataItemPembayaranInstan = [
 ];
 
 const TampilanPembayaran = ({
-  backModal
+  backModal,
+  setOpen
 }: {
   backModal: React.Dispatch<React.SetStateAction<Boolean>>;
+  setOpen: React.Dispatch<React.SetStateAction<Boolean>>;
 }) => {
   return (
     <>
@@ -140,7 +142,10 @@ const TampilanPembayaran = ({
         </section>
       </div>
 
-      <div className=" w-full mt-6 h-[8vh] rounded-md bg-[#757575] hover:bg-[#5a5757] cursor-pointer font-semibold text-white flex items-center justify-center">
+      <div
+        onClick={() => setOpen(true)}
+        className=" w-full mt-6 h-[8vh] rounded-md bg-[#757575] hover:bg-[#5a5757] cursor-pointer font-semibold text-white flex items-center justify-center"
+      >
         Kirim Bukti
       </div>
     </>

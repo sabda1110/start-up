@@ -15,3 +15,11 @@ type inputParamsProject = {
 type inputProps = {
   params: inputParamsProject;
 };
+
+type inputParamsArray = {
+  slug: string[];
+};
+
+type inputPropsMany = {
+  params: inputParamsArray;
+};
