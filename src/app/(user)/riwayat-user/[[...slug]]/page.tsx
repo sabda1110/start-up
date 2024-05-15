@@ -1,14 +1,28 @@
+'use client';
+
 import Image from 'next/image';
 
 import { FaArchive, FaChevronDown } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 const MenuStatus = dynamic(() => import('@/components/User/riwayat/Menu/Status/MenuStatus'));
 const MenuWaktu = dynamic(() => import('@/components/User/riwayat/Menu/Waktu/MenuWaktu'));
 const History = dynamic(() => import('@/components/User/riwayat/History/History'));
+const ModalInformasi = dynamic(() => import('@/components/User/core/modalRiwayat/ModalInformasi'));
 
-const page = () => {
+const page = (props: inputPropsMany) => {
+  const { params } = props;
+  const [open, setOpen] = useState<Boolean>(false);
+
+  useEffect(() => {
+    if (params.slug) {
+      setOpen(true);
+    }
+  }, [params]);
+
   return (
-    <div className="my-8 p-4">
+    <div className="my-8 p-4 ">
+      {open && <ModalInformasi setOpen={setOpen} />}
       <div className="bg-[#F9FAFB] rounded border px-4">
         <section className="w-full flex justify-center my-8">
           <Image src="/Images/logo.png" alt="Logo" width={200} height={100} />

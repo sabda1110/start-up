@@ -4,7 +4,8 @@ import {
   MdMenuOpen,
   MdDashboard,
   MdAccountBox,
-  MdOutlineKeyboardDoubleArrowRight
+  MdOutlineKeyboardDoubleArrowRight,
+  MdWorkHistory
 } from 'react-icons/md';
 import { BsHandbagFill, BsPeopleFill } from 'react-icons/bs';
 import Link from 'next/link';
@@ -23,9 +24,9 @@ const navItem = [
     icon: BsHandbagFill
   },
   {
-    name: 'Customer',
-    link: '/customer',
-    icon: BsPeopleFill
+    name: 'Riwayat',
+    link: '/riwayat-user',
+    icon: MdWorkHistory
   },
   {
     name: 'Pengaturan Akun',
