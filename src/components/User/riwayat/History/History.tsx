@@ -2,24 +2,31 @@
 
 import React from 'react';
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const SkeletonRiwayat = dynamic(() => import('../Skeleton_Riwayat/SkeletonRiwayat'));
 const ModalRiwayat = dynamic(() => import('../Modal_Riwayat/ModalRiwayat'));
 
-const History = () => {
+const History = ({ time, data }: { time: Boolean; data: DataBackEnd }) => {
   const [waktu, setWaktu] = useState<Boolean>(true);
+  const [item, setItem] = useState<dataParams[]>([]);
 
-  setTimeout(() => {
+  useEffect(() => {
+    setWaktu(true);
+    if (data.status) {
+      setItem(data.data as dataParams[]);
+      setWaktu(false);
+    }
     setWaktu(false);
-  }, 3000);
+  }, [data]);
+
+  useEffect(() => {
+    setWaktu(time);
+  }, [time]);
 
   return (
     <section className="grid md:grid-cols-2 gap-2">
-      {!waktu &&
-        Array.from({ length: 10 }, (_, index) => {
-          return <ModalRiwayat key={index} />;
-        })}
+      {!waktu && item.map((item: dataParams, index) => <ModalRiwayat key={index} />)}
       {waktu &&
         Array.from({ length: 2 }, (_, index) => {
           return <SkeletonRiwayat key={index} />;

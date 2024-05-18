@@ -14,6 +14,7 @@ const page = (props: inputPropsMany) => {
   const { params } = props;
   const [open, setOpen] = useState<Boolean>(false);
   const [data, setData] = useState<DataBackEnd>({ status: false, statusCode: 0, data: [] });
+  const [waktu, setWaktu] = useState<Boolean>(true);
   const port = process.env.API_BACKEND_URL;
 
   useEffect(() => {
@@ -39,8 +40,8 @@ const page = (props: inputPropsMany) => {
         if (!response.status) {
           throw new Error(response.data as string);
         } else {
-          console.log(response);
           setData(response);
+          setWaktu(false);
         }
       } catch (err) {
         console.log(err);
@@ -71,7 +72,7 @@ const page = (props: inputPropsMany) => {
             <FaChevronDown className="text-[#9CA3AF]" />
           </div>
         </section>
-        <History />
+        <History time={waktu} data={data} />
       </div>
     </div>
   );
