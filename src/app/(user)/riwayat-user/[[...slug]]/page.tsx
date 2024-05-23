@@ -13,12 +13,43 @@ const ModalInformasi = dynamic(() => import('@/components/User/core/modalRiwayat
 const page = (props: inputPropsMany) => {
   const { params } = props;
   const [open, setOpen] = useState<Boolean>(false);
+  const [data, setData] = useState<DataBackEnd>({ status: false, statusCode: 0, data: [] });
+  const [waktu, setWaktu] = useState<Boolean>(true);
+  const port = process.env.API_BACKEND_URL;
 
   useEffect(() => {
     if (params.slug) {
       setOpen(true);
     }
   }, [params]);
+
+  useEffect(() => {
+    if (!port) {
+      console.log('Port is not defined');
+      return;
+    }
+
+    const fetcData = async () => {
+      try {
+        const res = await fetch(`${port}/pekerjaan/info-pekerjaan-user/fadilahramadiak@gmail.com`);
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const response: DataBackEnd = await res.json();
+
+        if (!response.status) {
+          throw new Error(response.data as string);
+        } else {
+          setData(response);
+          setWaktu(false);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetcData();
+  }, []);
 
   return (
     <div className="my-8 p-4 ">
@@ -41,7 +72,7 @@ const page = (props: inputPropsMany) => {
             <FaChevronDown className="text-[#9CA3AF]" />
           </div>
         </section>
-        <History />
+        <History time={waktu} data={data} />
       </div>
     </div>
   );

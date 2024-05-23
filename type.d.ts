@@ -23,3 +23,22 @@ type inputParamsArray = {
 type inputPropsMany = {
   params: inputParamsArray;
 };
+
+type dataParams = {
+  id: number;
+  deadline: string;
+  type: string;
+  title: string;
+  description: string;
+  fileUtama: string;
+  fileOptional?: string;
+  status: string;
+  emailUser: string;
+  emailWorker?: string;
+};
+
+type DataBackEnd = {
+  status: boolean;
+  statusCode: number;
+  data: dataParams[] | string;
+};
