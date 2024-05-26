@@ -2,6 +2,7 @@ import { IoMdPerson } from 'react-icons/io';
 import { MdOutlineMailOutline, MdPhoneEnabled } from 'react-icons/md';
 import { IoDocuments } from 'react-icons/io5';
 import { FaKey } from 'react-icons/fa';
+import Link from 'next/link';
 
 const ProfilePage = () => {
   return (
@@ -24,7 +25,8 @@ const ProfilePage = () => {
                 +62 82384394849
               </p>
             </div>
-            <div
+            <Link
+              href={'/setting-account/profile'}
               className="button w-40 h-16 bg-blue-500  cursor-pointer select-none
                          active:translate-y-2  active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841]
                          active:border-b-[0px]
@@ -36,7 +38,7 @@ const ProfilePage = () => {
               <span className="flex flex-col justify-center items-center h-full text-white font-bold text-lg ">
                 Ubah Data
               </span>
-            </div>
+            </Link>
           </section>
           <section className=" grid grid-rows-2 gap-y-5 ">
             <div className=" p-4 bg-[#F9FAFB] border-2 border-gray-200 gap-y-5 flex items-center justify-center flex-col shadow-md">
@@ -61,7 +63,8 @@ const ProfilePage = () => {
               <h2 className=" text-xl font-semibold">Detail Password</h2>
               <FaKey size={70} className=" text-blue-500" />
               <p className=" text-[#232323] font-semibold text-xl">*******</p>
-              <div
+              <Link
+                href={'/setting-account/password'}
                 className="button w-40 h-10 bg-blue-500  cursor-pointer select-none
                          active:translate-y-2  active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841]
                          active:border-b-[0px]
@@ -73,7 +76,7 @@ const ProfilePage = () => {
                 <span className="flex flex-col justify-center items-center h-full text-white font-bold text-sm ">
                   Ubah Data
                 </span>
-              </div>
+              </Link>
             </div>
           </section>
         </div>
