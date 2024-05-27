@@ -42,3 +42,15 @@ type DataBackEnd = {
   statusCode: number;
   data: dataParams[] | string;
 };
+
+type ProfileUser = {
+  id?: number;
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+};
+
+type ReduxProfileUser = {
+  data: ProfileUser[];
+};

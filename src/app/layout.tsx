@@ -3,6 +3,7 @@ import AuthProvider from './SessionProvider';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { SessionProvider } from 'next-auth/react';
+import StoreProvider from '@/redux/StoreProvider';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700', '800', '900'],
@@ -22,10 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>
-        <AuthProvider>{children}</AuthProvider>
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="en">
+        <body className={poppins.className}>
+          <AuthProvider>{children}</AuthProvider>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
