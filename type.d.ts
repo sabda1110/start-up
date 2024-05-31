@@ -54,3 +54,8 @@ type ProfileUser = {
 type ReduxProfileUser = {
   data: ProfileUser[];
 };
+
+type MenuHeader = {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+};
