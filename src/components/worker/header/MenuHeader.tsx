@@ -56,13 +56,13 @@ const MenuHeader: React.FC<MenuHeader> = ({ open, setOpen }) => {
     <div
       className={` ${
         open ? 'translate-x-0' : '-translate-x-full'
-      } block md:hidden fixed top-0 left-0 right-0 bottom-0 bg-black/60 z-50 transition-all  duration-100 `}
+      } block  md:hidden fixed top-0 left-0 right-0 bottom-0 bg-black/60 z-50  `}
     >
       <div
         ref={modalRef}
         className={` ${
           open ? 'translate-x-0' : '-translate-x-full'
-        }  transition-all ease-in duration-500 delay-200 w-2/4 bg-white h-svh px-4`}
+        }  transition-all ease-in duration-200 delay-200 w-2/4 bg-white h-svh px-4`}
       >
         <div className="image flex h-[60px]  justify-center items-center">
           <Image
