@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const DashboardWorker: React.FC = () => {
   return (
-    <div className=" w-full md:h-full h-screen md:overflow-hidden overflow-y-scroll  ">
+    <div className="  md:h-full h-screen md:overflow-hidden overflow-y-scroll  ">
       <div className="container-header flex border flex-col md:flex-row gap-4">
         <section className=" md:w-1/5 w-full  p-4 rounded-lg bg-[#E6F2FC] h-[175px] flex flex-col items-center text-center justify-center gap-y-3">
           <h2 className=" font-bold text-[24px] text-[#212B36]">Selamat Datang!</h2>
@@ -42,11 +42,13 @@ const DashboardWorker: React.FC = () => {
         </section>
       </div>
 
-      <div className="desc-data flex md:flex-row gap-4 flex-col items-center justify-center md:h-[356px] md:py-0 py-20 mt-4 rounded-lg p-4 bg-gray-100 border">
-        <section className=" md:w-3/4 w-full h-full  relative   ">
+      <div className="desc-data w-full md:h-[450px] flex md:flex-row gap-4 flex-col items-center justify-center  md:py-4  py-20 mt-4 rounded-lg p-4 bg-gray-100 border">
+        <section className=" md:w-3/4 w-full h-full py-5 ">
+          <h2 className=" text-[#0F3F62] font-bold text-2xl ">Pencapaian Tugas</h2>
           <LineComponent />
         </section>
-        <section className="md:w-1/4  relative  w-full p-4 flex flex-col items-center ">
+        <section className="md:w-1/4    w-full p-4 flex flex-col ">
+          <h2 className=" text-[#0F3F62] font-bold text-xl ">Pengeluaran dan Pendapatan</h2>
           <PieComponent />
           <div className=" grid grid-cols-2 mt-4  w-full gap-x-5 ">
             <div className=" border-l-4 border-[#559BED] pl-2">

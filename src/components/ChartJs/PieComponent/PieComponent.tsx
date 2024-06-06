@@ -7,7 +7,9 @@ import { pieData } from '../Data/DataSet';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const PieComponent = () => {
-  const options = {};
+  const options = {
+    responsive: true
+  };
 
   return <Pie options={options} data={pieData} />;
 };
