@@ -11,7 +11,15 @@ const registerPage = () => {
 
   return (
     <div className="w-screen h-screen flex items-center justify-center relative">
-      <section className=" w-[350px] h-[95%] lg:w-[589px] lg:h-[680px] bg-[#f5f5f5] flex flex-col items-center  rounded-lg overflow-hidden border  border-[#d5d5d5]">
+      <section className=" w-[350px] h-[95%] relative md:w-[589px] md:h-[680px] bg-[#f5f5f5] flex flex-col items-center  rounded-lg  border  border-[#d5d5d5]">
+        <Image
+          src={'/Images/iconLogin.png'}
+          alt="Icon Login"
+          width={285}
+          height={435}
+          style={{ objectFit: 'cover' }}
+          className=" absolute left-[-12.5rem] -z-10 md:block hidden"
+        />
         <div
           className="image__login relative w-[200px] h-[150px] cursor-pointer "
           onClick={() => router.push('/')}
@@ -35,7 +43,7 @@ const registerPage = () => {
           <p>Login with Facebook</p>
         </div>
 
-        <div className="flex w-[487px] mt-6 items-center ">
+        <div className="flex w-full justify-center mt-6 items-center ">
           <div className="w-[200px] h-[5px] bg-[#BFBFBF] border"></div>
           <p className="w-[87px] text-center text-[16px]">OR</p>
           <div className="w-[200px] h-[5px] bg-[#BFBFBF] border"></div>
@@ -82,15 +90,6 @@ const registerPage = () => {
             Don’t have an account? <span className="text-[#6258dc] font-semibold">Register</span>
           </p>
         </form>
-      </section>
-      <section className="w-[285px] h-[435px] hidden lg:block   absolute -z-10   left-[16.5rem] top-2  -rotate-10 ">
-        <Image
-          src={'/Images/iconLogin.png'}
-          alt="Icon Login"
-          width={285}
-          height={435}
-          style={{ objectFit: 'cover' }}
-        />
       </section>
     </div>
   );

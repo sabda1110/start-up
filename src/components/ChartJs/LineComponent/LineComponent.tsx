@@ -28,7 +28,7 @@ ChartJS.register(
 const LineComponent = () => {
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
+
     scales: {
       x: {
         grid: { display: false },
