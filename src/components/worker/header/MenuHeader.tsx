@@ -21,7 +21,7 @@ const navItem = [
   },
   {
     name: 'Project',
-    link: '/project',
+    link: '/project-worker',
     icon: BsHandbagFill
   },
   {
@@ -93,6 +93,7 @@ const MenuHeader: React.FC<MenuHeader> = ({ open, setOpen }) => {
           {navItem.map((item: { link: string; name: string; icon: any }, index) => (
             <Link
               href={item.link}
+              onClick={() => setOpen(false)}
               key={index}
               className={` ${
                 pathname === item.link

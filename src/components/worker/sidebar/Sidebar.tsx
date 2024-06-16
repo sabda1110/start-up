@@ -22,7 +22,7 @@ const navItem = [
   },
   {
     name: 'Project',
-    link: '/project',
+    link: '/project-worker',
     icon: BsHandbagFill
   },
   {
